@@ -1,0 +1,7 @@
+# ninja log v6
+3	196	7863776558165725	libcore.a	af26314f64ca1a71
+589	792	7863789825209689	NetSim.exe	98f7148590a1f401
+14	473	7864036117521631	build.ninja	232189793ce937be
+24	198	7863789819556382	CMakeFiles/NetSim.dir/src/package.cpp.obj	1b42f61d9e7cc6e5
+32	205	7863789819636596	CMakeFiles/NetSim.dir/src/storage_types.cpp.obj	8dfe8f65e13f108b
+3	588	7863789819349723	CMakeFiles/NetSim.dir/main.cpp.obj	db8a60abe9ebcfb6

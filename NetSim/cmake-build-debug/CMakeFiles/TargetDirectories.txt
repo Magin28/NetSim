@@ -1,0 +1,3 @@
+C:/Users/User/Documents/GitHub/NetSIM-KSM/NetSim/cmake-build-debug/CMakeFiles/NetSim.dir
+C:/Users/User/Documents/GitHub/NetSIM-KSM/NetSim/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/User/Documents/GitHub/NetSIM-KSM/NetSim/cmake-build-debug/CMakeFiles/rebuild_cache.dir

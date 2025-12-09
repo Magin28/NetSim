@@ -1,0 +1,8 @@
+"C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2024.3.4/bin/ninja/win/x64/ninja.exe" -G Ninja -S C:\Users\User\Documents\GitHub\NetSIM-KSM\NetSim -B C:\Users\User\Documents\GitHub\NetSIM-KSM\NetSim\cmake-build-debug
+CMake Error at CMakeLists.txt:31 (target_link_libraries):
+  Target "netsim_tests" of type EXECUTABLE may not be linked into another
+  target.  One may link only to INTERFACE, OBJECT, STATIC or SHARED
+  libraries, or to executables with the ENABLE_EXPORTS property set.
+
+
+-- Configuring incomplete, errors occurred!
