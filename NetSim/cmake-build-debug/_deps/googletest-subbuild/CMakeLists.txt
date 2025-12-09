@@ -20,8 +20,8 @@ project(googletest-populate NONE)
 include(ExternalProject)
 ExternalProject_Add(googletest-populate
                      "UPDATE_DISCONNECTED" "False" "DOWNLOAD_EXTRACT_TIMESTAMP" "FALSE" "EXTERNALPROJECT_INTERNAL_ARGUMENT_SEPARATOR" "URL" "https://github.com/google/googletest/archive/refs/heads/main.zip"
-                    SOURCE_DIR          "C:/Users/User/Documents/GitHub/NetSIM-KSM/NetSim/cmake-build-debug/_deps/googletest-src"
-                    BINARY_DIR          "C:/Users/User/Documents/GitHub/NetSIM-KSM/NetSim/cmake-build-debug/_deps/googletest-build"
+                    SOURCE_DIR          "C:/Users/User/Documents/GitHub/NetSim/NetSim/cmake-build-debug/_deps/googletest-src"
+                    BINARY_DIR          "C:/Users/User/Documents/GitHub/NetSim/NetSim/cmake-build-debug/_deps/googletest-build"
                     CONFIGURE_COMMAND   ""
                     BUILD_COMMAND       ""
                     INSTALL_COMMAND     ""

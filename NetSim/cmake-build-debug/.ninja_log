@@ -1,7 +1,11 @@
 # ninja log v6
 3	196	7863776558165725	libcore.a	af26314f64ca1a71
+8	4884	7869815615690664	lib/libgtest.a	f19b6f23d722cbc0
 589	792	7863789825209689	NetSim.exe	98f7148590a1f401
-14	473	7864036117521631	build.ninja	232189793ce937be
-24	198	7863789819556382	CMakeFiles/NetSim.dir/src/package.cpp.obj	1b42f61d9e7cc6e5
-32	205	7863789819636596	CMakeFiles/NetSim.dir/src/storage_types.cpp.obj	8dfe8f65e13f108b
-3	588	7863789819349723	CMakeFiles/NetSim.dir/main.cpp.obj	db8a60abe9ebcfb6
+14	473	7869817679320757	build.ninja	232189793ce937be
+4	193	7869813045795989	CMakeFiles/NetSim.dir/src/package.cpp.obj	99575be05088b03c
+24	201	7869813045995799	CMakeFiles/NetSim.dir/src/storage_types.cpp.obj	eacc4b21b9330f12
+201	379	7869813047766110	libNetSim.a	fc0504b536e4a850
+25	1439	7869813202858561	googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.obj	89f92f3c28b1dd69
+4	8357	7869813202651318	googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj	1cb1a179e6c6f267
+27	174	7869816450245643	lib/libgtest_main.a	5d257a0b112d61fb

@@ -1,5 +1,5 @@
-if(EXISTS "C:/Users/User/Documents/GitHub/NetSIM-KSM/NetSim/cmake-build-debug/netsim_tests[1]_tests.cmake")
-  include("C:/Users/User/Documents/GitHub/NetSIM-KSM/NetSim/cmake-build-debug/netsim_tests[1]_tests.cmake")
+if(EXISTS "C:/Users/User/Documents/GitHub/NetSim/NetSim/cmake-build-debug/NetSim_Tests[1]_tests.cmake")
+  include("C:/Users/User/Documents/GitHub/NetSim/NetSim/cmake-build-debug/NetSim_Tests[1]_tests.cmake")
 else()
-  add_test(netsim_tests_NOT_BUILT netsim_tests_NOT_BUILT)
+  add_test(NetSim_Tests_NOT_BUILT NetSim_Tests_NOT_BUILT)
 endif()
