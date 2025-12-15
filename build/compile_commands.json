@@ -1,0 +1,50 @@
+[
+{
+  "directory": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build",
+  "command": "/usr/bin/c++  -I/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/NetSim.dir/src/package.cpp.o -c /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/src/package.cpp",
+  "file": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/src/package.cpp",
+  "output": "CMakeFiles/NetSim.dir/src/package.cpp.o"
+},
+{
+  "directory": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build",
+  "command": "/usr/bin/c++  -I/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/include -g -std=gnu++17 -arch arm64 -o CMakeFiles/NetSim.dir/src/storage_types.cpp.o -c /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/src/storage_types.cpp",
+  "file": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/src/storage_types.cpp",
+  "output": "CMakeFiles/NetSim.dir/src/storage_types.cpp.o"
+},
+{
+  "directory": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build",
+  "command": "/usr/bin/c++  -I/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/include -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/include -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/NetSim_App.dir/main.cpp.o -c /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/main.cpp",
+  "file": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/main.cpp",
+  "output": "CMakeFiles/NetSim_App.dir/main.cpp.o"
+},
+{
+  "directory": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build",
+  "command": "/usr/bin/c++  -I/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/include -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/include -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest -g -std=gnu++17 -arch arm64 -o CMakeFiles/NetSim_App.dir/tests/tests.cpp.o -c /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/tests/tests.cpp",
+  "file": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/tests/tests.cpp",
+  "output": "CMakeFiles/NetSim_App.dir/tests/tests.cpp.o"
+},
+{
+  "directory": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build/googletest/googlemock",
+  "command": "/usr/bin/c++  -I/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googlemock/include -I/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googlemock -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/include -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest -g -std=c++17 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googlemock/src/gmock-all.cc",
+  "file": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googlemock/src/gmock-all.cc",
+  "output": "googletest/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build/googletest/googlemock",
+  "command": "/usr/bin/c++  -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googlemock/include -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googlemock -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/include -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest -g -std=c++17 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googlemock/src/gmock_main.cc",
+  "file": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googlemock/src/gmock_main.cc",
+  "output": "googletest/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build/googletest/googletest",
+  "command": "/usr/bin/c++  -I/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/include -I/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest -g -std=c++17 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/src/gtest-all.cc",
+  "file": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/src/gtest-all.cc",
+  "output": "googletest/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build/googletest/googletest",
+  "command": "/usr/bin/c++  -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/include -isystem /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest -g -std=c++17 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/src/gtest_main.cc",
+  "file": "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/src/gtest_main.cc",
+  "output": "googletest/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+}
+]

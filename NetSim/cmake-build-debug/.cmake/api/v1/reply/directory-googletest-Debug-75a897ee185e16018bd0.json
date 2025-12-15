@@ -1,0 +1,14 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : [],
+		"files" : [],
+		"nodes" : []
+	},
+	"installers" : [],
+	"paths" : 
+	{
+		"build" : "googletest",
+		"source" : "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0"
+	}
+}

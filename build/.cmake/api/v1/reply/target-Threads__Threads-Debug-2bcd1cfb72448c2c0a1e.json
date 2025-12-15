@@ -1,0 +1,63 @@
+{
+	"abstract" : true,
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"find_package",
+			"config_compiler_and_linker"
+		],
+		"files" : 
+		[
+			"/opt/homebrew/share/cmake/Modules/FindThreads.cmake",
+			"/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/cmake/internal_utils.cmake",
+			"/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 2
+			},
+			{
+				"command" : 2,
+				"file" : 2,
+				"line" : 83,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 66,
+				"parent" : 1
+			},
+			{
+				"file" : 0,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 292,
+				"parent" : 3
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"id" : "Threads::Threads::@f95b5c00bd49b3b4698d",
+	"imported" : true,
+	"local" : true,
+	"name" : "Threads::Threads",
+	"paths" : 
+	{
+		"build" : "googletest/googletest",
+		"source" : "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/googletest-1.17.0/googletest"
+	},
+	"sources" : [],
+	"type" : "INTERFACE_LIBRARY"
+}

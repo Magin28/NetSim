@@ -1,0 +1,5 @@
+if(EXISTS "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build/NetSim_App[1]_tests.cmake")
+  include("/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/build/NetSim_App[1]_tests.cmake")
+else()
+  add_test(NetSim_App_NOT_BUILT NetSim_App_NOT_BUILT)
+endif()

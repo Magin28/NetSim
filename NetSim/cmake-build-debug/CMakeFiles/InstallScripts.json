@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/cmake-build-debug/cmake_install.cmake",
+		"/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/cmake-build-debug/googletest/cmake_install.cmake",
+		"/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/cmake-build-debug/googletest/googlemock/cmake_install.cmake",
+		"/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/cmake-build-debug/googletest/googletest/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
