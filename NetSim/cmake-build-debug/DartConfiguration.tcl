@@ -4,17 +4,17 @@
 
 
 # Configuration directories and files
-SourceDirectory: C:/Users/User/Documents/GitHub/NetSim/NetSim
-BuildDirectory: C:/Users/User/Documents/GitHub/NetSim/NetSim/cmake-build-debug
+SourceDirectory: /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim
+BuildDirectory: /Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim/cmake-build-debug
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: LAPTOP-718478G8
+Site: MacBook-Marcin.local
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Win32-ninja
+BuildName: Darwin-c++
 
 # Subprojects
 LabelsForSubprojects: 
@@ -27,8 +27,8 @@ SubmitInactivityTimeout:
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "C:/Program Files/JetBrains/CLion 2024.3.4/bin/cmake/win/x64/bin/cmake.exe" "C:/Users/User/Documents/GitHub/NetSim/NetSim"
-MakeCommand: "C:\Program Files\JetBrains\CLion 2024.3.4\bin\cmake\win\x64\bin\cmake.exe" --build . --config "${CTEST_CONFIGURATION_TYPE}"
+ConfigureCommand: "/Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake" "/Users/marcinostachowicz/Desktop/Programownie/NetSimGit/NetSim"
+MakeCommand: /Applications/CLion.app/Contents/bin/cmake/mac/aarch64/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
 DefaultCTestConfigurationType: Release
 
 # version control
@@ -63,8 +63,8 @@ UpdateOptions:
 UpdateType: 
 
 # Compiler info
-Compiler: C:/Program Files/JetBrains/CLion 2024.3.4/bin/mingw/bin/g++.exe
-CompilerVersion: 13.1.0
+Compiler: /usr/bin/c++
+CompilerVersion: 14.0.3.14030022
 
 # Dynamic analysis (MemCheck)
 PurifyCommand: 
@@ -81,7 +81,7 @@ MemoryCheckCommandOptions:
 MemoryCheckSuppressionFile: 
 
 # Coverage
-CoverageCommand: C:/Program Files/JetBrains/CLion 2024.3.4/bin/mingw/bin/gcov.exe
+CoverageCommand: /usr/bin/gcov
 CoverageExtraFlags: -l
 
 # Testing options
