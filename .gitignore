@@ -1,0 +1,63 @@
+# ===== Build directories =====
+build/
+build-*/
+cmake-build-*/
+out/
+
+# ===== CMake files =====
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+install_manifest.txt
+CTestTestfile.cmake
+Testing/
+
+# ===== Compiled binaries =====
+*.exe
+*.out
+*.app
+
+# ===== Object files =====
+*.o
+*.obj
+*.lo
+*.la
+
+# ===== Static and dynamic libraries =====
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# ===== Debug / profiling files =====
+*.pdb
+*.idb
+*.gcda
+*.gcno
+*.gcov
+*.prof
+*.log
+
+# ===== IDE files =====
+# CLion
+.idea/
+cmake-build-debug/
+cmake-build-release/
+
+# Visual Studio
+.vs/
+*.vcxproj*
+*.sln
+
+# VS Code
+.vscode/
+
+# ===== OS files =====
+.DS_Store
+Thumbs.db
+
+# ===== Temporary files =====
+*~
+*.swp
