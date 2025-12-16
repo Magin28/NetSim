@@ -1,1 +1,0 @@
-/usr/bin/c++ -g -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/NetSim_App.dir/main.cpp.o CMakeFiles/NetSim_App.dir/tests/tests.cpp.o -o NetSim_App  libNetSim.a lib/libgtest_main.a lib/libgtest.a

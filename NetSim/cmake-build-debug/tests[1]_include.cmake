@@ -1,5 +1,0 @@
-if(EXISTS "C:/Users/User/CLionProjects/mdig-agh-lang_cpp__exercises-288bd81c85d7/skeletons/untitled3/cmake-build-debug/tests[1]_tests.cmake")
-  include("C:/Users/User/CLionProjects/mdig-agh-lang_cpp__exercises-288bd81c85d7/skeletons/untitled3/cmake-build-debug/tests[1]_tests.cmake")
-else()
-  add_test(tests_NOT_BUILT tests_NOT_BUILT)
-endif()
