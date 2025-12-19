@@ -2,6 +2,7 @@
 #include "package.hxx"
 #include "storage_types.hxx"
 #include <utility>
+#include "nodes.hxx"
 
 
 TEST(WorkerTest, HasBuffer) {
