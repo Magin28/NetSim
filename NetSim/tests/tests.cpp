@@ -1,10 +1,9 @@
 #include <gtest/gtest.h>
-#include "gmock/gmock.h"
+#include <gmock/gmock.h>
 #include "package.hxx"
 #include "storage_types.hxx"
 #include <utility>
 #include "nodes.hxx"
-#include <gtest.h>
 
 // main mocks
 
@@ -23,9 +22,7 @@ public:
 
     MOCK_CONST_METHOD0(cend, IPackageStockpile::const_iterator());
 
-#ifdef WITH_RECEIVER_TYPE
     MOCK_CONST_METHOD0(get_receiver_type, ReceiverType());
-#endif
 
     MOCK_CONST_METHOD0(get_id, ElementID());
 
@@ -130,4 +127,64 @@ TEST(RampTest, IsDeliveryOnTime)
 
     r.deliver_goods(3);
     ASSERT_TRUE(r.get_sending_buffer().has_value());
+}
+
+TEST(ReceiverPreferencesTest, AddReceiversRescalesProbability) {
+    ReceiverPreferences rp;
+
+    MockReceiver r1;
+    rp.add_receiver(&r1);
+    ASSERT_NE(rp.get_preferences().find(&r1), rp.get_preferences().end());
+    EXPECT_EQ(rp.get_preferences().at(&r1), 1.0);
+
+    MockReceiver r2;
+    rp.add_receiver(&r2);
+    EXPECT_EQ(rp.get_preferences().at(&r1), 0.5);
+    ASSERT_NE(rp.get_preferences().find(&r2), rp.get_preferences().end());
+    EXPECT_EQ(rp.get_preferences().at(&r2), 0.5);
+}
+
+TEST(ReceiverPreferencesTest, RemoveReceiversRescalesProbability) {
+    ReceiverPreferences rp;
+
+    MockReceiver r1, r2;
+    rp.add_receiver(&r1);
+    rp.add_receiver(&r2);
+
+    rp.remove_receiver(&r2);
+    ASSERT_EQ(rp.get_preferences().find(&r2), rp.get_preferences().end());
+    EXPECT_EQ(rp.get_preferences().at(&r1), 1.0);
+}
+
+void PrintTo(const IPackageStockpile::const_iterator& it, ::std::ostream* os) {
+    *os << it->get_id();
+}
+
+class PackageSenderFixture : public PackageSender {
+    // Nie sposób w teście wykorzystać prywetnej metody `PackageSender::push_package()`,
+    // dlatego do celów testowych stworzona została implementacja zawierająca
+    // metodę `push_package()` w sekcji publicznej.
+public:
+    void push_package(Package&& package) { PackageSender::push_package(std::move(package)); }
+};
+
+using ::testing::_;
+
+TEST(PackageSenderTest, SendPackage) {
+    MockReceiver mock_receiver;
+    // Oczekujemy, że metoda `receive_package()` obiektu `mock_receiver` zostanie
+    // wywołana dwukrotnie, z dowolnym argumentem (symbol `_`).
+    EXPECT_CALL(mock_receiver, receive_package(_)).Times(1);
+
+    PackageSenderFixture sender;
+    sender.receiver_preferences_.add_receiver(&mock_receiver);
+    // Zwróć uwagę, że poniższa instrukcja korzysta z semantyki referencji do r-wartości.
+    sender.push_package(Package());
+
+    sender.send_package();
+
+    EXPECT_FALSE(sender.get_sending_buffer());
+
+    // Upewnij się, że proces wysyłania zachodzi tylko wówczas, gdy w bufor jest pełny.
+    sender.send_package();
 }
