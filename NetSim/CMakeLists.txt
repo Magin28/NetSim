@@ -12,6 +12,13 @@ set(NETSIM_SOURCES
         include/helpers.hxx
         src/nodes.cpp
         include/nodes.hxx
+<<<<<<< Updated upstream
+=======
+        include/factory.hxx
+        src/factory.cpp
+        include/raports.hxx
+        src/raports.cpp
+>>>>>>> Stashed changes
 )
 
 add_library(NetSim STATIC ${NETSIM_SOURCES} include/package.hxx include/storage_types.hxx include/types.hxx)
