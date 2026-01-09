@@ -1,4 +1,4 @@
-#include "storage_types.hxx"
+#include "storage_types.hpp"
 
 Package PackageQueue::pop() {
     Package package;

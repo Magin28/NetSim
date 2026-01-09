@@ -1,10 +1,10 @@
 #include <gtest/gtest.h>
 #include <gmock/gmock.h>
-#include "package.hxx"
-#include "storage_types.hxx"
+#include "package.hpp"
+#include "storage_types.hpp"
 #include <utility>
-#include "nodes.hxx"
-#include "factory.hxx"
+#include "nodes.hpp"
+#include "factory.hpp"
 
 // main mocks
 

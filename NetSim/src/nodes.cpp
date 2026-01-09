@@ -1,7 +1,7 @@
 //
 // Created by Karol on 16/12/2025.
 //
-#include "nodes.hxx"
+#include "nodes.hpp"
 
 using ReceiverPair = std::pair<IPackageReceiver* const, double>;
 
