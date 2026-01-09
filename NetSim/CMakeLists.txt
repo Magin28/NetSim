@@ -12,7 +12,6 @@ set(NETSIM_SOURCES
         include/helpers.hxx
         src/nodes.cpp
         include/nodes.hxx
-
         include/factory.hxx
         src/factory.cpp
         include/raports.hxx
@@ -56,7 +55,7 @@ if(TARGET gtest_main)
             PRIVATE
             NetSim
             gtest_main
-            
+            gmock
     )
 
     # Włączanie testów dla CMake (dla targetu NetSim_App)
