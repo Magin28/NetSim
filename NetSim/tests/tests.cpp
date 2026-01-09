@@ -4,6 +4,7 @@
 #include "storage_types.hxx"
 #include <utility>
 #include "nodes.hxx"
+#include "factory.hxx"
 
 // main mocks
 
@@ -161,9 +162,6 @@ void PrintTo(const IPackageStockpile::const_iterator& it, ::std::ostream* os) {
 }
 
 class PackageSenderFixture : public PackageSender {
-    // Nie sposób w teście wykorzystać prywetnej metody `PackageSender::push_package()`,
-    // dlatego do celów testowych stworzona została implementacja zawierająca
-    // metodę `push_package()` w sekcji publicznej.
 public:
     void push_package(Package&& package) { PackageSender::push_package(std::move(package)); }
 };
@@ -172,19 +170,136 @@ using ::testing::_;
 
 TEST(PackageSenderTest, SendPackage) {
     MockReceiver mock_receiver;
-    // Oczekujemy, że metoda `receive_package()` obiektu `mock_receiver` zostanie
-    // wywołana dwukrotnie, z dowolnym argumentem (symbol `_`).
+
     EXPECT_CALL(mock_receiver, receive_package(_)).Times(1);
 
     PackageSenderFixture sender;
     sender.receiver_preferences_.add_receiver(&mock_receiver);
-    // Zwróć uwagę, że poniższa instrukcja korzysta z semantyki referencji do r-wartości.
+
     sender.push_package(Package());
 
     sender.send_package();
 
     EXPECT_FALSE(sender.get_sending_buffer());
 
-    // Upewnij się, że proces wysyłania zachodzi tylko wówczas, gdy w bufor jest pełny.
     sender.send_package();
+}
+
+TEST(FactoryTest, IsConsistentCorrect) {
+
+    Factory factory;
+    factory.add_ramp(Ramp(1, 1));
+    factory.add_worker(Worker(1, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+    factory.add_storehouse(Storehouse(1));
+
+    Ramp& r = *(factory.find_ramp_by_id(1));
+    r.receiver_preferences_.add_receiver(&(*factory.find_worker_by_id(1)));
+
+    Worker& w = *(factory.find_worker_by_id(1));
+    w.receiver_preferences_.add_receiver(&(*factory.find_storehouse_by_id(1)));
+
+    EXPECT_TRUE(factory.is_consistent());
+}
+
+TEST(FactoryTest, IsConsistentMissingLink1) {
+
+    Factory factory;
+    factory.add_ramp(Ramp(1, 1));
+    factory.add_worker(Worker(1, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+    factory.add_storehouse(Storehouse(1));
+
+    Ramp& r = *(factory.find_ramp_by_id(1));
+    r.receiver_preferences_.add_receiver(&(*factory.find_worker_by_id(1)));
+
+    Worker& w = *(factory.find_worker_by_id(1));
+    w.receiver_preferences_.add_receiver(&(*factory.find_worker_by_id(1)));
+
+    EXPECT_FALSE(factory.is_consistent());
+}
+
+TEST(FactoryTest, IsConsistentMissingLink2) {
+
+    Factory factory;
+    factory.add_ramp(Ramp(1, 1));
+    factory.add_worker(Worker(1, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+    factory.add_worker(Worker(2, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+    factory.add_storehouse(Storehouse(1));
+
+    Ramp& r = *(factory.find_ramp_by_id(1));
+    r.receiver_preferences_.add_receiver(&(*factory.find_worker_by_id(1)));
+
+    Worker& w1 = *(factory.find_worker_by_id(1));
+    w1.receiver_preferences_.add_receiver(&(*factory.find_storehouse_by_id(1)));
+    w1.receiver_preferences_.add_receiver(&(*factory.find_worker_by_id(2)));
+
+    Worker& w2 = *(factory.find_worker_by_id(2));
+    w2.receiver_preferences_.add_receiver(&(*factory.find_worker_by_id(2)));
+
+    EXPECT_FALSE(factory.is_consistent());
+}
+
+TEST(FactoryTest, RemoveWorkerNoSuchReceiver) {
+
+    Factory factory;
+    factory.add_ramp(Ramp(1, 1));
+    factory.add_worker(Worker(1, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+
+    Ramp& r = *(factory.find_ramp_by_id(1));
+    Worker& w = *(factory.find_worker_by_id(1));
+    r.receiver_preferences_.add_receiver(&w);
+
+    Worker w2(2, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO));
+
+    factory.remove_worker(w2.get_id());
+
+    auto prefs = r.receiver_preferences_.get_preferences();
+    ASSERT_EQ(prefs.size(), 1U);
+
+    auto it = prefs.find(&w);
+    ASSERT_NE(it, prefs.end());
+    EXPECT_EQ(it->second, 1.0);
+}
+
+TEST(FactoryTest, RemoveWorkerOnlyOneReceiver) {
+
+    Factory factory;
+    factory.add_ramp(Ramp(1, 1));
+    factory.add_worker(Worker(1, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+
+    Ramp& r = *(factory.find_ramp_by_id(1));
+    Worker& w = *(factory.find_worker_by_id(1));
+    r.receiver_preferences_.add_receiver(&w);
+
+    factory.remove_worker(w.get_id());
+
+    auto prefs = r.receiver_preferences_.get_preferences();
+    ASSERT_TRUE(prefs.empty());
+}
+
+TEST(FactoryTest, RemoveWorkerTwoRemainingReceivers) {
+
+    Factory factory;
+    factory.add_ramp(Ramp(1, 1));
+    factory.add_worker(Worker(1, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+    factory.add_worker(Worker(2, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+    factory.add_worker(Worker(3, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+
+    Ramp& r = *(factory.find_ramp_by_id(1));
+
+    r.receiver_preferences_.add_receiver(&(*(factory.find_worker_by_id(1))));
+    r.receiver_preferences_.add_receiver(&(*(factory.find_worker_by_id(2))));
+    r.receiver_preferences_.add_receiver(&(*(factory.find_worker_by_id(3))));
+
+    factory.remove_worker(1);
+
+    auto prefs = r.receiver_preferences_.get_preferences();
+    ASSERT_EQ(prefs.size(), 2U);
+
+    auto it = prefs.find(&(*(factory.find_worker_by_id(2))));
+    ASSERT_NE(it, prefs.end());
+    EXPECT_DOUBLE_EQ(it->second, 1.0 / 2.0);
+
+    it = prefs.find(&(*(factory.find_worker_by_id(3))));
+    ASSERT_NE(it, prefs.end());
+    EXPECT_DOUBLE_EQ(it->second, 1.0 / 2.0);
 }
