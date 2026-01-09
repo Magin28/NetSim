@@ -50,6 +50,7 @@ if(TARGET gtest_main)
             PRIVATE
             NetSim
             gtest_main
+            
     )
 
     # Włączanie testów dla CMake (dla targetu NetSim_App)
