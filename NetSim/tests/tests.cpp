@@ -1,11 +1,11 @@
 #include <gtest/gtest.h>
 
-#include "package.hpp"
-#include "factory.hpp"
-#include "nodes.hpp"
-#include "storage_types.hpp"
-#include "types.hpp"
-#include "helpers.hpp"
+#include "package.hxx"
+#include "factory.hxx"
+#include "nodes.hxx"
+#include "storage_types.hxx"
+#include "types.hxx"
+#include "helpers.hxx"
 
 
 TEST(PackageTest, IsAssignedIdLowest) {

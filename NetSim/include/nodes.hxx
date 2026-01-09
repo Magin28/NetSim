@@ -8,10 +8,10 @@
 #include <memory>
 #include <map>
 #include <utility>
-#include "types.hpp"
-#include "storage_types.hpp"
-#include "package.hpp"
-#include "helpers.hpp"
+#include "types.hxx"
+#include "storage_types.hxx"
+#include "package.hxx"
+#include "helpers.hxx"
 
 enum class ReceiverType {
     WORKER, STOREHOUSE

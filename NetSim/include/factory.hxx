@@ -4,8 +4,8 @@
 #ifndef NETSIM_FACTORY_HPP
 #define NETSIM_FACTORY_HPP
 
-#include "storage_types.hpp"
-#include "nodes.hpp"
+#include "storage_types.hxx"
+#include "nodes.hxx"
 #include <bits/stdc++.h>
 
 bool has_reachable_storehouse(const PackageSender* sender, std::map<const PackageSender*, NodeColor>& node_colors);

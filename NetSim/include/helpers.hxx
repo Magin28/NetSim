@@ -4,7 +4,7 @@
 #include <functional>
 #include <random>
 
-#include "types.hpp"
+#include "types.hxx"
 
 extern std::random_device rd;
 extern std::mt19937 rng;

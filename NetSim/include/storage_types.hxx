@@ -1,7 +1,7 @@
 #ifndef NETSIM_STORAGE_TYPES_HPP
 #define NETSIM_STORAGE_TYPES_HPP
 
-#include "package.hpp"
+#include "package.hxx"
 #include <iostream>
 #include <list>
 

@@ -3,8 +3,8 @@
 //
 
 
-#include "factory.hpp"
-#include "nodes.hpp"
+#include "factory.hxx"
+#include "nodes.hxx"
 
 bool has_reachable_storehouse(const PackageSender* sender, std::map<const PackageSender*, NodeColor>& node_colors) {
     if (node_colors[sender] == NodeColor::VERIFIED) {

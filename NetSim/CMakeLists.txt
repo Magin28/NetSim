@@ -9,14 +9,14 @@ set(NETSIM_SOURCES
         src/package.cpp
         src/storage_types.cpp
         src/helpers.cpp
-        include/helpers.hpp
+        include/helpers.hxx
         src/nodes.cpp
-        include/nodes.hpp
-        include/factory.hpp
+        include/nodes.hxx
+        include/factory.hxx
         src/factory.cpp
 )
 
-add_library(NetSim STATIC ${NETSIM_SOURCES} include/package.hpp include/storage_types.hpp include/types.hpp)
+add_library(NetSim STATIC ${NETSIM_SOURCES} include/package.hxx include/storage_types.hxx include/types.hxx)
 
 target_include_directories(NetSim
         PUBLIC

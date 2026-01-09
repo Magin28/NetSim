@@ -1,7 +1,7 @@
 #include <iostream>
-#include "package.hpp"
-#include "types.hpp"
-#include "storage_types.hpp"
+#include "package.hxx"
+#include "types.hxx"
+#include "storage_types.hxx"
 #include "gtest/gtest.h"
 
 int main(int argc, char** argv) {
