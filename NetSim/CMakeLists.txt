@@ -30,7 +30,6 @@ target_include_directories(NetSim
 # Pliki źródłowe aplikacji: main.cpp (Test Runner) ORAZ tests.cpp (Testy)
 set(TEST_RUNNER_SOURCES
         main.cpp
-        tests/testsCustom.cpp
         tests/tests.cpp
 )
 
