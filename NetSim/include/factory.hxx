@@ -1,5 +1,8 @@
-#ifndef NETSIM_FACTORY_HXX
-#define NETSIM_FACTORY_HXX
+//
+// Created by Karol on 08/01/2026.
+//
+#ifndef NETSIM_FACTORY_HPP
+#define NETSIM_FACTORY_HPP
 
 #include "storage_types.hxx"
 #include "nodes.hxx"
@@ -152,4 +155,4 @@ Factory load_factory_structure(std::istream& is);
 
 void save_factory_structure(Factory& factory, std::ostream& os);
 
-#endif //NETSIM_FACTORY_HXX
+#endif //NETSIM_FACTORY_HPP
