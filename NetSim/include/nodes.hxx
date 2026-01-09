@@ -46,6 +46,13 @@ public:
     void remove_receiver(IPackageReceiver* receiver);
 
     IPackageReceiver* choose_receiver();
+    const preferences_t& get_preferences() const {
+        return this->preferences_;
+    };
+    const_iterator cbegin() const noexcept { return preferences_.cbegin(); };
+    const_iterator cend() const noexcept { return preferences_.cend(); };
+    const_iterator begin() const noexcept { return preferences_.begin(); };
+    const_iterator end() const noexcept { return preferences_.end(); };
 
     const preferences_t& get_preferences() const {
         return this->preferences_;

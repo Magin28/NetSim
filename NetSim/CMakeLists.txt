@@ -12,8 +12,8 @@ set(NETSIM_SOURCES
         include/helpers.hxx
         src/nodes.cpp
         include/nodes.hxx
-        src/factory.cpp
         include/factory.hxx
+        src/factory.cpp
 )
 
 add_library(NetSim STATIC ${NETSIM_SOURCES} include/package.hxx include/storage_types.hxx include/types.hxx)
