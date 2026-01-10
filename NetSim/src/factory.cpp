@@ -126,6 +126,7 @@ ParsedLineData parse_line(std::string& line) {
     std::istringstream token_stream(line);
     char delimiter = ' ';
 
+
     while (std::getline(token_stream, token, delimiter))
         tokens.push_back(token);
 
@@ -212,6 +213,8 @@ void link(Factory& factory, const std::map<std::string, std::string>& parameters
 }
 
 Factory load_factory_structure(std::istream& is) {
+
+
     Factory factory;
 
     std::string line;

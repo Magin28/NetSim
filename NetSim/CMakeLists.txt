@@ -14,6 +14,9 @@ set(NETSIM_SOURCES
         include/nodes.hxx
         include/factory.hxx
         src/factory.cpp
+        include/raports.hxx
+        src/raports.cpp
+
         include/simulation.hxx
         src/simulation.cpp
 )
