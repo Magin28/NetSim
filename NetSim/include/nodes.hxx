@@ -29,7 +29,9 @@ public:
     virtual IPackageStockpile::const_iterator cend() const = 0;
     virtual IPackageStockpile::const_iterator begin() const = 0;
     virtual IPackageStockpile::const_iterator end() const = 0;
-    virtual ReceiverType get_receiver_type() const = 0;
+    virtual ReceiverType get_receiver_type() const {
+        return ReceiverType::WORKER;
+    };
     virtual ~IPackageReceiver() = default;
 };
 

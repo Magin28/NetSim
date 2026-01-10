@@ -17,6 +17,8 @@ set(NETSIM_SOURCES
         include/raports.hxx
         src/raports.cpp
 
+        include/simulation.hxx
+        src/simulation.cpp
 )
 
 add_library(NetSim STATIC ${NETSIM_SOURCES} include/package.hxx include/storage_types.hxx include/types.hxx)

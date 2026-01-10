@@ -1,57 +1,16 @@
 #include <gtest/gtest.h>
-#include "gmock/gmock.h"
+
 #include "package.hxx"
-#include "storage_types.hxx"
-#include <utility>
+#include "factory.hxx"
 #include "nodes.hxx"
-#include <gtest.h>
+#include "storage_types.hxx"
+#include "types.hxx"
+#include "helpers.hxx"
 
-// main mocks
 
-#define NODES_MOCKS_HPP_
+TEST(PackageTest, IsAssignedIdLowest) {
+    // przydzielanie ID o jeden większych -- utworzenie dwóch obiektów pod rząd
 
-class MockReceiver : public IPackageReceiver
-{
-public:
-    MOCK_METHOD1(receive_package, void(Package &&));
-
-    MOCK_CONST_METHOD0(begin, IPackageStockpile::const_iterator());
-
-    MOCK_CONST_METHOD0(cbegin, IPackageStockpile::const_iterator());
-
-    MOCK_CONST_METHOD0(end, IPackageStockpile::const_iterator());
-
-    MOCK_CONST_METHOD0(cend, IPackageStockpile::const_iterator());
-
-#ifdef WITH_RECEIVER_TYPE
-    MOCK_CONST_METHOD0(get_receiver_type, ReceiverType());
-#endif
-
-    MOCK_CONST_METHOD0(get_id, ElementID());
-
-    MOCK_CONST_METHOD0(get_delivery_interval, TimeOffset());
-};
-
-// TEST połprodukty
-
-TEST(WorkerTest, HasBuffer)
-{
-    Worker w(1, 2, std::make_unique<PackageQueue>(PackageQueueType::FIFO));
-    Time t = 1;
-
-    w.receive_package(Package(1));
-    w.do_work(t);
-    ++t;
-    w.receive_package(Package(2));
-    w.do_work(t);
-    auto &buffer = w.get_sending_buffer();
-
-    ASSERT_TRUE(buffer.has_value());
-    EXPECT_EQ(buffer.value().get_id(), 1);
-}
-
-TEST(PackageTest, IsAssignedIdLowest)
-{
     Package p1;
     Package p2;
 
@@ -59,8 +18,9 @@ TEST(PackageTest, IsAssignedIdLowest)
     EXPECT_EQ(p2.get_id(), 2);
 }
 
-TEST(PackageTest, IsIdReused)
-{
+TEST(PackageTest, IsIdReused) {
+    // przydzielanie ID po zwolnionym obiekcie
+
     {
         Package p1;
     }
@@ -69,24 +29,21 @@ TEST(PackageTest, IsIdReused)
     EXPECT_EQ(p2.get_id(), 1);
 }
 
-TEST(PackageTest, IsMoveConstructorCorrect)
-{
+TEST(PackageTest, IsMoveConstructorCorrect) {
     Package p1;
     Package p2(std::move(p1));
 
     EXPECT_EQ(p2.get_id(), 1);
 }
 
-TEST(PackageTest, IsAssignmentOperatorCorrect)
-{
+TEST(PackageTest, IsAssignmentOperatorCorrect) {
     Package p1;
     Package p2 = std::move(p1);
 
     EXPECT_EQ(p2.get_id(), 1);
 }
 
-TEST(PackageQueueTest, IsFifoCorrect)
-{
+TEST(PackageQueueTest, IsFifoCorrect) {
     PackageQueue q(PackageQueueType::FIFO);
     q.push(Package(1));
     q.push(Package(2));
@@ -98,8 +55,7 @@ TEST(PackageQueueTest, IsFifoCorrect)
     EXPECT_EQ(p.get_id(), 2);
 }
 
-TEST(PackageQueueTest, IsLifoCorrect)
-{
+TEST(PackageQueueTest, IsLifoCorrect) {
     PackageQueue q(PackageQueueType::LIFO);
     q.push(Package(1));
     q.push(Package(2));
@@ -111,23 +67,47 @@ TEST(PackageQueueTest, IsLifoCorrect)
     EXPECT_EQ(p.get_id(), 1);
 }
 
-// TEST węzły sieci
+TEST(WorkerTest, HasBuffer) {
+    // Test scenariusza opisanego na stronie:
+    // http://home.agh.edu.pl/~mdig/dokuwiki/doku.php?id=teaching:programming:soft-dev:topics:net-simulation:part_nodes#bufor_aktualnie_przetwarzanego_polproduktu
 
-TEST(RampTest, IsDeliveryOnTime)
-{
+    Worker w(1, 2, std::make_unique<PackageQueue>(PackageQueueType::FIFO));
+    Time t = 1;
 
-    Ramp r(1, 2);
-    auto recv = std::make_unique<Storehouse>(1);
+    w.receive_package(Package(1));
+    w.do_work(t);
+    ++t;
+    w.receive_package(Package(2));
+    w.do_work(t);
+    auto& buffer = w.get_sending_buffer();
 
-    r.receiver_preferences_.add_receiver(recv.get());
+    ASSERT_TRUE(buffer.has_value());
+    EXPECT_EQ(buffer.value().get_id(), 1);
+}
 
-    r.deliver_goods(1);
-    ASSERT_TRUE(r.get_sending_buffer().has_value());
-    r.send_package();
+TEST(FactoryTest, IsConsistentCorrect) {
+    // R -> W -> S
 
-    r.deliver_goods(2);
-    ASSERT_FALSE(r.get_sending_buffer().has_value());
+    Factory factory;
+    factory.add_ramp(Ramp(1, 1));
+    factory.add_worker(Worker(1, 1, std::make_unique<PackageQueue>(PackageQueueType::FIFO)));
+    factory.add_storehouse(Storehouse(1));
 
-    r.deliver_goods(3);
-    ASSERT_TRUE(r.get_sending_buffer().has_value());
+    Ramp& r = *(factory.find_ramp_by_id(1));
+    r.receiver_preferences_.add_receiver(&(*factory.find_worker_by_id(1)));
+
+    Worker& w = *(factory.find_worker_by_id(1));
+    w.receiver_preferences_.add_receiver(&(*factory.find_storehouse_by_id(1)));
+
+    EXPECT_TRUE(factory.is_consistent());
+}
+
+TEST(FactoryIOTest, ParseRamp) {
+    std::istringstream iss("LOADING_RAMP id=1 delivery-interval=3");
+    auto factory = load_factory_structure(iss);
+
+    ASSERT_EQ(std::next(factory.ramp_cbegin(), 1), factory.ramp_cend());
+    const auto& r = *(factory.ramp_cbegin());
+    EXPECT_EQ(1, r.get_id());
+    EXPECT_EQ(3, r.get_delivery_interval());
 }
