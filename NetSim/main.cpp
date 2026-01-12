@@ -3,8 +3,10 @@
 #include "types.hxx"
 #include "storage_types.hxx"
 #include "gtest/gtest.h"
+#include "simulation.hxx"
 
-int main(int argc, char** argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    return RUN_ALL_TESTS();
+int main() {
+    Simulation sim;
+    sim.run();
+    return 0;
 }
