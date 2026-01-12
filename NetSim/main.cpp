@@ -42,21 +42,21 @@ int main() {
     input_file.close();
 
     std::ofstream struct_os(struct_out_file);
-    if (struct_os.is_open()) {
-        generate_structure_report(factory, struct_os);
-        struct_os.close();
-        std::cout << "Zapisano raport struktury: " << struct_out_file << std::endl;
-    } else {
-        std::cerr << "Nie udalo sie zapisac raportu struktury." << std::endl;
-    }
+    // if (struct_os.is_open()) {
+    //     generate_structure_report(factory, struct_os);
+    //     struct_os.close();
+    //     std::cout << "Zapisano raport struktury: " << struct_out_file << std::endl;
+    // } else {
+    //     std::cerr << "Nie udalo sie zapisac raportu struktury." << std::endl;
+    // }
 
     std::cout << "Rozpoczynam symulacje na " << simulation_steps << " tur..." << std::endl;
 
     std::ofstream sim_os(sim_out_file);
-    if (!sim_os.is_open()) {
-        std::cerr << "Nie mozna utworzyc pliku raportu symulacji!" << std::endl;
-        return 1;
-    }
+    // if (!sim_os.is_open()) {
+    //     std::cerr << "Nie mozna utworzyc pliku raportu symulacji!" << std::endl;
+    //     return 1;
+    // }
 
     simulate(factory, simulation_steps, [&sim_os](Factory& f, Time t) {
         generate_simulation_turn_report(f, sim_os, t);
