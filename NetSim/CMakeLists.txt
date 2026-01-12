@@ -40,7 +40,7 @@ set(TEST_RUNNER_SOURCES
 add_executable(NetSim_App ${TEST_RUNNER_SOURCES})
 
 
-configure_file(${CMAKE_CURRENT_SOURCE_DIR}/dane.txt ${CMAKE_CURRENT_BINARY_DIR}/dane.txt COPYONLY)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/dane/dane.txt ${CMAKE_CURRENT_BINARY_DIR}/dane/dane.txt COPYONLY)
 
 
 

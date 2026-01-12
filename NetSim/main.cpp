@@ -7,16 +7,19 @@
 #include "raports.hxx"
 
 int main() {
-    const std::string filename = "dane.txt";
+    const std::string project_root = "../";
 
-    // Nazwy plików wyjściowych
-    const std::string struct_out_file = "struct-report.txt";
-    const std::string sim_out_file = "sim-report.txt";
+    const std::string filename = project_root + "dane/dane.txt";
+
+    const std::string output_dir = project_root + "Wyniki";
+
+    const std::string struct_out_file = output_dir + "/struct-report.txt";
+    const std::string sim_out_file = output_dir + "/sim-report.txt";
+
     const TimeOffset simulation_steps = 30;
 
     std::cout << "--- START: NetSim ---" << std::endl;
 
-    // 1. Otwarcie pliku
     std::ifstream input_file(filename);
     if (!input_file.is_open()) {
         std::cerr << "BLAD KRYTYCZNY: Nie mozna otworzyc pliku '" << filename << "'!" << std::endl;
@@ -26,7 +29,6 @@ int main() {
 
     Factory factory;
 
-    // 2. Wczytywanie struktury (Parsowanie)
     try {
         std::cout << "Wczytywanie konfiguracji z pliku..." << std::endl;
         factory = load_factory_structure(input_file);
@@ -39,7 +41,6 @@ int main() {
     }
     input_file.close();
 
-    // 3. Raport struktury (przed symulacją)
     std::ofstream struct_os(struct_out_file);
     if (struct_os.is_open()) {
         generate_structure_report(factory, struct_os);
@@ -49,7 +50,6 @@ int main() {
         std::cerr << "Nie udalo sie zapisac raportu struktury." << std::endl;
     }
 
-    // 4. Uruchomienie Symulacji
     std::cout << "Rozpoczynam symulacje na " << simulation_steps << " tur..." << std::endl;
 
     std::ofstream sim_os(sim_out_file);
@@ -58,7 +58,6 @@ int main() {
         return 1;
     }
 
-    // Wywołanie symulacji z lambda-funkcją do raportowania
     simulate(factory, simulation_steps, [&sim_os](Factory& f, Time t) {
         generate_simulation_turn_report(f, sim_os, t);
     });
