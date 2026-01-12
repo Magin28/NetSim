@@ -28,31 +28,29 @@ target_include_directories(NetSim
         ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
-# --------------------------------------------------
-## 🚀 Tworzenie Aplikacji/Test Runnera (NetSim_App)
-# --------------------------------------------------
 
-# Pliki źródłowe aplikacji: main.cpp (Test Runner) ORAZ tests.cpp (Testy)
+
+
 set(TEST_RUNNER_SOURCES
         main.cpp
         tests/tests.cpp
 )
 
-# Target NetSim_App teraz kompiluje oba pliki
+
 add_executable(NetSim_App ${TEST_RUNNER_SOURCES})
 
-# --------------------------------------------------
-## 🧪 Testy (Konfiguracja GoogleTest)
-# --------------------------------------------------
 
-# Ścieżka do GoogleTest (jeden katalog wstecz)
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/dane/dane.txt ${CMAKE_CURRENT_BINARY_DIR}/dane/dane.txt COPYONLY)
+
+
+
+
 set(GOOGLETEST_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../googletest-1.17.0)
 add_subdirectory(${GOOGLETEST_DIR} ${CMAKE_CURRENT_BINARY_DIR}/googletest)
 
-# Sprawdzenie, czy GoogleTest został włączony
+
 if(TARGET gtest_main)
 
-    # Łączenie pliku wykonywalnego z biblioteką NetSim i GoogleTest
     target_link_libraries(NetSim_App
             PRIVATE
             NetSim
@@ -60,11 +58,9 @@ if(TARGET gtest_main)
             gmock
     )
 
-    # Włączanie testów dla CMake (dla targetu NetSim_App)
     include(CTest)
     include(GoogleTest)
 
-    # Używamy NetSim_App jako test runnera
     gtest_discover_tests(NetSim_App)
 
 endif()

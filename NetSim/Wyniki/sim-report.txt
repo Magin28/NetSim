@@ -1,0 +1,540 @@
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 0                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/2)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: (pusty)
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 1                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 2                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 3                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/2)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 4                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 5                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 6                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 7                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 8                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 9                                      |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 10                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 11                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 12                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 13                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 14                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 15                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 16                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 17                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 18                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 19                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 20                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 21                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 22                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 23                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 24                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 25                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 26                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 27                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 28                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
++---------------------------------------------------------------+
+| STAN SYMULACJI - TURA: 29                                     |
++---------------------------------------------------------------+
+| WORKERS STATUS:
+|   Worker #1
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+|   Worker #2
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: (pusta)
+|     > S-Buffer (Gotowe!):       (pusty)
+|
+| STOREHOUSES STATUS:
+|   Storehouse #1 Stock: { #1, #1, #1, #1 }
++---------------------------------------------------------------+
+
