@@ -1,138 +1,132 @@
-//
-// Created by User on 9.01.2026.
-//
 #include "raports.hxx"
 
+#include <iostream>
+#include <iomanip>
+#include <set>
+#include <string>
+#include <vector>
+
+
+void print_header_line(std::ostream& os, std::string title) {
+    os << "+---------------------------------------------------------------+\n";
+    os << "| " << std::left << std::setw(61) << title << " |\n";
+    os << "+---------------------------------------------------------------+\n";
+}
+
 void generate_structure_report(const Factory& f, std::ostream& os) {
-    os << "\n== LOADING RAMPS ==\n\n";
+    os << "\n";
+    print_header_line(os, "STRUKTURA FABRYKI (MAPA POLACZEN)");
 
-    std::set<ElementID> workers;
-    std::set<ElementID> storehouses;
 
+    os << "\n[ NADAJNIKI (Ramps) ]\n";
     for (auto it = f.ramp_cbegin(); it != f.ramp_cend(); it++) {
-        os << "LOADING RAMP #" << std::to_string(it->get_id()) << "\n  Delivery interval: "
-           << std::to_string(it->get_delivery_interval()) << "\n  Receivers:\n";
-        for (auto iterator = it->receiver_preferences_.cbegin();
-             iterator != it->receiver_preferences_.cend(); iterator++) {
-            if (iterator->first->get_receiver_type() == ReceiverType::WORKER) {
-                workers.insert(iterator->first->get_id());
-            } else if (iterator->first->get_receiver_type() == ReceiverType::STOREHOUSE) {
-                storehouses.insert(iterator->first->get_id());
-            }
-             }
-        for (auto i: storehouses) {
-            os << "    storehouse #" << std::to_string(i) << "\n";
-        }
-        for (auto i: workers) {
-            os << "    worker #" << std::to_string(i) << "\n";
+        os << "  + Rampa [" << it->get_id() << "]\n";
+        os << "    |-- Interval: " << it->get_delivery_interval() << " tury\n";
+        os << "    `-- Wysyla do:\n";
+
+        for (const auto& receiver : it->receiver_preferences_) {
+            std::string type = (receiver.first->get_receiver_type() == ReceiverType::WORKER) ? "Worker" : "Store";
+            os << "        -> " << type << " #" << receiver.first->get_id() << "\n";
         }
         os << "\n";
     }
-    workers.clear();
-    storehouses.clear();
 
-    os << "\n== WORKERS ==\n\n";
 
-    std::string queue_type;
-for (auto it = f.worker_cbegin(); it != f.worker_cend(); it++) {
-        switch (it->get_queue()->get_queue_type()) {
-            case PackageQueueType::LIFO: {
-                queue_type = "LIFO";
-                break;
-            }
-            case PackageQueueType::FIFO: {
-                queue_type = "FIFO";
-                break;
-            }
-            default:
-                break;
-        }
-        os << "WORKER #" << std::to_string(it->get_id()) << "\n  Processing time: "
-           << std::to_string(it->get_processing_duration()) << "\n  Queue type: " << queue_type << "\n  Receivers:\n";
-        for (auto iterator = it->receiver_preferences_.cbegin();
-             iterator != it->receiver_preferences_.cend(); iterator++) {
-            if (iterator->first->get_receiver_type() == ReceiverType::WORKER) {
-                workers.insert(iterator->first->get_id());
-            } else if (iterator->first->get_receiver_type() == ReceiverType::STOREHOUSE) {
-                storehouses.insert(iterator->first->get_id());
-            }
-        }
-        for (auto i: storehouses) {
-            os << "    storehouse #" << std::to_string(i) << "\n";
-        }
-        for (auto i: workers) {
-            os << "    worker #" << std::to_string(i) << "\n";
+    os << "[ PRZETWORCY (Workers) ]\n";
+    for (auto it = f.worker_cbegin(); it != f.worker_cend(); it++) {
+        std::string q_type = (it->get_queue()->get_queue_type() == PackageQueueType::LIFO) ? "LIFO" : "FIFO";
+
+        os << "  + Worker [" << it->get_id() << "]\n";
+        os << "    |-- Czas pracy: " << it->get_processing_duration() << "\n";
+        os << "    |-- Kolejka:    " << q_type << "\n";
+        os << "    `-- Wysyla do:\n";
+
+        for (const auto& receiver : it->receiver_preferences_) {
+            std::string type = (receiver.first->get_receiver_type() == ReceiverType::WORKER) ? "Worker" : "Store";
+            os << "        -> " << type << " #" << receiver.first->get_id() << "\n";
         }
         os << "\n";
     }
-    os << "\n== STOREHOUSES ==\n\n";
+
+
+    os << "[ MAGAZYNY (Storehouses) ]\n";
     for (auto it = f.storehouse_cbegin(); it != f.storehouse_cend(); it++) {
-        os << "STOREHOUSE #" << std::to_string(it->get_id()) << "\n\n";
+        os << "  + Storehouse [" << it->get_id() << "]\n";
     }
+    os << "\n";
 }
 
 void generate_simulation_turn_report(const Factory& f, std::ostream& os, Time t) {
+    std::string turn_title = "STAN SYMULACJI - TURA: " + std::to_string(t);
+    print_header_line(os, turn_title);
 
-    os << "=== [ Turn: " << std::to_string(t) << " ] ===\n\n";
-    os << "== WORKERS ==\n";
 
-    if (f.worker_cend() != f.worker_cbegin()) {
+    std::set<ElementID> worker_ids;
+    for (auto it = f.worker_cbegin(); it != f.worker_cend(); it++) worker_ids.insert(it->get_id());
+
+    if (!worker_ids.empty()) os << "| WORKERS STATUS:\n";
+
+    for (auto id : worker_ids) {
+        auto it = f.find_worker_by_id(id);
+
+        os << "|   Worker #" << id << "\n";
+
+        // 1. P-Buffer (Co jest teraz obrabiane?)
+        os << "|     > P-Buffer (Przetwarzanie): ";
+        if (it->get_processing_buffer().has_value()) {
+            Time time_processed = t - it->get_package_processing_start_time() + 1;
+            os << "[ Paczka #" << it->get_processing_buffer()->get_id() << " ]"
+               << " (postep: " << time_processed << "/" << it->get_processing_duration() << ")";
+        } else {
+            os << "(pusty)";
+        }
+        os << "\n";
+
+
+        os << "|     > Kolejka: ";
+        if (it->get_queue()->empty()) {
+            os << "(pusta)";
+        } else {
+            for (const auto& pkg : *it->get_queue()) {
+                os << "#" << pkg.get_id() << " ";
+            }
+        }
+        os << "\n";
+
+        os << "|     > S-Buffer (Gotowe!):       ";
+        if (it->get_sending_buffer().has_value()) {
+            os << ">>> [ Paczka #" << it->get_sending_buffer()->get_id() << " ] >>>";
+        } else {
+            os << "(pusty)";
+        }
+        os << "\n|\n";
+    }
+
+
+    std::set<ElementID> store_ids;
+    for (auto it = f.storehouse_cbegin(); it != f.storehouse_cend(); it++) store_ids.insert(it->get_id());
+
+    if (!store_ids.empty()) os << "| STOREHOUSES STATUS:\n";
+
+    for (auto id : store_ids) {
+        auto it = f.find_storehouse_by_id(id);
+        os << "|   Storehouse #" << id << " Stock: ";
+
+        if (it->get_queue()->empty()) {
+            os << "(pusty)";
+        } else {
+
+            os << "{ ";
+            bool first = true;
+            for (const auto& pkg : *it->get_queue()) {
+                if (!first) os << ", ";
+                os << "#" << pkg.get_id();
+                first = false;
+            }
+            os << " }";
+        }
         os << "\n";
     }
-    std::set<ElementID> workers;
-    for (auto it = f.worker_cbegin(); it != f.worker_cend(); it++) {
-        workers.insert(it->get_id());
-    }
-    for (auto it: workers) {
-        auto iterator = f.find_worker_by_id(it);
-        os << "WORKER #" << std::to_string(it) << "\n";
-        if (iterator->get_processing_buffer().has_value()) {
-            os << "  PBuffer: #" << iterator->get_processing_buffer()->get_id() << " (pt = "
-               << std::to_string(t - iterator->get_package_processing_start_time() + 1) << ")\n";
-        } else {
-            os << "  PBuffer: (empty)\n";
-        }
-        if (iterator->get_queue()->empty()) {
-            os << "  Queue: (empty)\n";
-        } else {
-            os << "  Queue:";
-            for (auto i = iterator->get_queue()->cbegin(); i != iterator->get_queue()->cend(); i++) {
-                if (i == iterator->get_queue()->cbegin()) {
-                    os << " #" << i->get_id();
-                } else {
-                    os << ", #" << i->get_id();
-                }
-            }
-            os << "\n";
-        }
-        if (iterator->get_sending_buffer().has_value()) {
-            os << "  SBuffer: #" << iterator->get_sending_buffer()->get_id() << "\n";
-        } else {
-            os << "  SBuffer: (empty)\n";
-        }
 
-    }
-    os << "\n\n== STOREHOUSES ==\n\n";
-    std::set<ElementID> stores;
-    for (auto it = f.storehouse_cbegin(); it != f.storehouse_cend(); it++) {
-        stores.insert(it->get_id());
-    }
-    for (auto it: stores) {
-        auto iterator = f.find_storehouse_by_id(it);
-        os << "STOREHOUSE #" << std::to_string(it) << "\n";
-        ///Queue
-        if (iterator->get_queue()->empty()) {
-            os << "  Stock: (empty)\n\n";
-        } else {
-            os << "  Stock:";
-            for (auto i = iterator->get_queue()->cbegin(); i != iterator->get_queue()->cend(); i++) {
-                if (i == iterator->get_queue()->cbegin()) {
-                    os << " #" << i->get_id();
-                } else {
-                    os << ", #" << i->get_id();
-                }
-            }
-            os << "\n\n";
-        }
-    }
+    os << "+---------------------------------------------------------------+\n\n";
 }
