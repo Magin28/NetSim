@@ -5,29 +5,41 @@
 
 [ NADAJNIKI (Ramps) ]
   + Rampa [1]
-    |-- Interval: 3 tury
+    |-- Interval: 2 tury
     `-- Wysyla do:
         -> Worker #1
 
   + Rampa [2]
-    |-- Interval: 2 tury
+    |-- Interval: 4 tury
+    `-- Wysyla do:
+        -> Worker #2
+
+  + Rampa [3]
+    |-- Interval: 3 tury
     `-- Wysyla do:
         -> Worker #2
 
 [ PRZETWORCY (Workers) ]
   + Worker [1]
+    |-- Czas pracy: 1
+    |-- Kolejka:    FIFO
+    `-- Wysyla do:
+        -> Worker #3
+
+  + Worker [2]
+    |-- Czas pracy: 3
+    |-- Kolejka:    LIFO
+    `-- Wysyla do:
+        -> Worker #3
+
+  + Worker [3]
     |-- Czas pracy: 2
     |-- Kolejka:    FIFO
     `-- Wysyla do:
         -> Store #1
-        -> Worker #2
-
-  + Worker [2]
-    |-- Czas pracy: 1
-    |-- Kolejka:    LIFO
-    `-- Wysyla do:
-        -> Store #1
+        -> Store #2
 
 [ MAGAZYNY (Storehouses) ]
   + Storehouse [1]
+  + Storehouse [2]
 
