@@ -354,8 +354,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -378,8 +378,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -402,8 +402,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -426,8 +426,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -450,8 +450,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -474,8 +474,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -498,8 +498,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -522,8 +522,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -546,8 +546,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -570,8 +570,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -594,8 +594,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -618,8 +618,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -642,8 +642,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -666,8 +666,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -690,8 +690,8 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -714,7 +714,7 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #1, #1 }
+|   Storehouse #2 Stock: { #1, #1, #1, #1 }
 +---------------------------------------------------------------+
 

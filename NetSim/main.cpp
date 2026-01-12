@@ -21,11 +21,11 @@ int main() {
     std::cout << "--- START: NetSim ---" << std::endl;
 
     std::ifstream input_file(filename);
-    if (!input_file.is_open()) {
-        std::cerr << "BLAD KRYTYCZNY: Nie mozna otworzyc pliku '" << filename << "'!" << std::endl;
-        std::cerr << "Upewnij sie, ze 'simulation.txt' jest w folderze projektu i odswiezyles CMake." << std::endl;
-        return 1;
-    }
+    // if (!input_file.is_open()) {
+    //     std::cerr << "BLAD KRYTYCZNY: Nie mozna otworzyc pliku '" << filename << "'!" << std::endl;
+    //     std::cerr << "Upewnij sie, ze 'simulation.txt' jest w folderze projektu i odswiezyles CMake." << std::endl;
+    //     return 1;
+    // }
 
     Factory factory;
 

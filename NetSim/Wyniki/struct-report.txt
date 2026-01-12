@@ -36,8 +36,8 @@
     |-- Czas pracy: 2
     |-- Kolejka:    FIFO
     `-- Wysyla do:
-        -> Store #1
         -> Store #2
+        -> Store #1
 
 [ MAGAZYNY (Storehouses) ]
   + Storehouse [1]
