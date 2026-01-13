@@ -5,11 +5,11 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/3)
-|     > Kolejka: #1 
+|     > Kolejka: (pusta)
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
@@ -29,15 +29,15 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #2 ] >>>
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 2/3)
-|     > Kolejka: #1 
+|     > Kolejka: #3 #4 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/2)
+|     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
 |     > S-Buffer (Gotowe!):       (pusty)
 |
@@ -53,17 +53,17 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: #1 
+|     > Kolejka: #3 #4 
 |     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
+|     > P-Buffer (Przetwarzanie): [ Paczka #2 ] (postep: 1/2)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
 |   Storehouse #1 Stock: (pusty)
@@ -77,21 +77,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #5 ] >>>
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/3)
-|     > Kolejka: #1 
+|     > P-Buffer (Przetwarzanie): [ Paczka #4 ] (postep: 1/3)
+|     > Kolejka: #3 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/2)
+|     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: #1 
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #2 ] >>>
 |
 | STOREHOUSES STATUS:
 |   Storehouse #1 Stock: (pusty)
-|   Storehouse #2 Stock: { #1 }
+|   Storehouse #2 Stock: (pusty)
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -104,18 +104,18 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 2/3)
-|     > Kolejka: #1 #1 
+|     > P-Buffer (Przetwarzanie): [ Paczka #4 ] (postep: 2/3)
+|     > Kolejka: #3 #6 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: #1 
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/2)
+|     > Kolejka: #5 
+|     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: (pusty)
-|   Storehouse #2 Stock: { #1 }
+|   Storehouse #1 Stock: { #2 }
+|   Storehouse #2 Stock: (pusty)
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -125,21 +125,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #7 ] >>>
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: #1 #1 
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > Kolejka: #3 #6 #8 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #4 ] >>>
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/2)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: #5 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: (pusty)
-|   Storehouse #2 Stock: { #1, #1 }
+|   Storehouse #1 Stock: { #2 }
+|   Storehouse #2 Stock: (pusty)
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -152,18 +152,18 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/3)
-|     > Kolejka: #1 
+|     > P-Buffer (Przetwarzanie): [ Paczka #8 ] (postep: 1/3)
+|     > Kolejka: #3 #6 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: #1 
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > P-Buffer (Przetwarzanie): [ Paczka #5 ] (postep: 1/2)
+|     > Kolejka: #7 #4 
+|     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: (pusty)
-|   Storehouse #2 Stock: { #1, #1 }
+|   Storehouse #1 Stock: { #2 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -173,21 +173,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #9 ] >>>
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 2/3)
-|     > Kolejka: #1 
+|     > P-Buffer (Przetwarzanie): [ Paczka #8 ] (postep: 2/3)
+|     > Kolejka: #3 #6 #10 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/2)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: #7 #4 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #5 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: (pusty)
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #2 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -201,17 +201,17 @@
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: #1 
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > Kolejka: #3 #6 #10 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #8 ] >>>
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > P-Buffer (Przetwarzanie): [ Paczka #7 ] (postep: 1/2)
+|     > Kolejka: #4 #9 
+|     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: (pusty)
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -221,21 +221,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #11 ] >>>
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/3)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #12 ] (postep: 1/3)
+|     > Kolejka: #3 #6 #10 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/2)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > P-Buffer (Przetwarzanie): (pusty)
+|     > Kolejka: #4 #9 #8 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #7 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -248,18 +248,18 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 2/3)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #12 ] (postep: 2/3)
+|     > Kolejka: #3 #6 #10 #13 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > P-Buffer (Przetwarzanie): [ Paczka #4 ] (postep: 1/2)
+|     > Kolejka: #9 #8 #11 
+|     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -269,21 +269,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #14 ] >>>
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > Kolejka: #3 #6 #10 #13 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #12 ] >>>
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #9 #8 #11 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #4 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -296,18 +296,18 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #13 ] (postep: 1/3)
+|     > Kolejka: #3 #6 #10 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): [ Paczka #1 ] (postep: 1/2)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #9 ] (postep: 1/2)
+|     > Kolejka: #8 #11 #14 #12 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -317,21 +317,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #15 ] >>>
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #13 ] (postep: 2/3)
+|     > Kolejka: #3 #6 #10 #16 #17 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       >>> [ Paczka #1 ] >>>
+|     > Kolejka: #8 #11 #14 #12 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #9 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -345,17 +345,17 @@
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #3 #6 #10 #16 #17 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #13 ] >>>
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #8 ] (postep: 1/2)
+|     > Kolejka: #11 #14 #12 #15 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -365,21 +365,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #18 ] >>>
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #17 ] (postep: 1/3)
+|     > Kolejka: #3 #6 #10 #16 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #11 #14 #12 #15 #13 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #8 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -392,18 +392,18 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #17 ] (postep: 2/3)
+|     > Kolejka: #3 #6 #10 #16 #19 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #11 ] (postep: 1/2)
+|     > Kolejka: #14 #12 #15 #13 #18 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -413,21 +413,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #20 ] >>>
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #3 #6 #10 #16 #19 #21 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #17 ] >>>
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #14 #12 #15 #13 #18 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #11 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -440,18 +440,18 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #21 ] (postep: 1/3)
+|     > Kolejka: #3 #6 #10 #16 #19 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #14 ] (postep: 1/2)
+|     > Kolejka: #12 #15 #13 #18 #20 #17 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -461,21 +461,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #22 ] >>>
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #21 ] (postep: 2/3)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #12 #15 #13 #18 #20 #17 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #14 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -489,17 +489,17 @@
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #21 ] >>>
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #12 ] (postep: 1/2)
+|     > Kolejka: #15 #13 #18 #20 #17 #22 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -509,21 +509,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #24 ] >>>
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #25 ] (postep: 1/3)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #15 #13 #18 #20 #17 #22 #21 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #12 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14 }
+|   Storehouse #2 Stock: { #1 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -536,18 +536,18 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #25 ] (postep: 2/3)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 #26 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #15 ] (postep: 1/2)
+|     > Kolejka: #13 #18 #20 #17 #22 #21 #24 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14 }
+|   Storehouse #2 Stock: { #1, #12 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -557,21 +557,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #27 ] >>>
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 #26 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #25 ] >>>
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #13 #18 #20 #17 #22 #21 #24 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #15 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14 }
+|   Storehouse #2 Stock: { #1, #12 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -584,18 +584,18 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #26 ] (postep: 1/3)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #13 ] (postep: 1/2)
+|     > Kolejka: #18 #20 #17 #22 #21 #24 #27 #25 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14 }
+|   Storehouse #2 Stock: { #1, #12, #15 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -605,21 +605,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #28 ] >>>
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #26 ] (postep: 2/3)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 #29 #30 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #18 #20 #17 #22 #21 #24 #27 #25 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #13 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14 }
+|   Storehouse #2 Stock: { #1, #12, #15 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -633,17 +633,17 @@
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 #29 #30 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #26 ] >>>
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #18 ] (postep: 1/2)
+|     > Kolejka: #20 #17 #22 #21 #24 #27 #25 #28 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14, #13 }
+|   Storehouse #2 Stock: { #1, #12, #15 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -653,21 +653,21 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #31 ] >>>
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #30 ] (postep: 1/3)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 #29 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #20 #17 #22 #21 #24 #27 #25 #28 #26 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #18 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14, #13 }
+|   Storehouse #2 Stock: { #1, #12, #15 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -680,18 +680,18 @@
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #2
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #30 ] (postep: 2/3)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 #29 #32 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 |   Worker #3
-|     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
+|     > P-Buffer (Przetwarzanie): [ Paczka #20 ] (postep: 1/2)
+|     > Kolejka: #17 #22 #21 #24 #27 #25 #28 #26 #31 
 |     > S-Buffer (Gotowe!):       (pusty)
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14, #13 }
+|   Storehouse #2 Stock: { #1, #12, #15, #18 }
 +---------------------------------------------------------------+
 
 +---------------------------------------------------------------+
@@ -701,20 +701,20 @@
 |   Worker #1
 |     > P-Buffer (Przetwarzanie): (pusty)
 |     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #33 ] >>>
 |
 |   Worker #2
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #3 #6 #10 #16 #19 #23 #29 #32 #34 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #30 ] >>>
 |
 |   Worker #3
 |     > P-Buffer (Przetwarzanie): (pusty)
-|     > Kolejka: (pusta)
-|     > S-Buffer (Gotowe!):       (pusty)
+|     > Kolejka: #17 #22 #21 #24 #27 #25 #28 #26 #31 
+|     > S-Buffer (Gotowe!):       >>> [ Paczka #20 ] >>>
 |
 | STOREHOUSES STATUS:
-|   Storehouse #1 Stock: { #1, #1 }
-|   Storehouse #2 Stock: { #1, #1, #1, #1 }
+|   Storehouse #1 Stock: { #2, #5, #7, #4, #9, #8, #11, #14, #13 }
+|   Storehouse #2 Stock: { #1, #12, #15, #18 }
 +---------------------------------------------------------------+
 

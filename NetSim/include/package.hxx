@@ -9,11 +9,14 @@ class Package
 public:
     Package();
 
-    Package(ElementID ID) : ID_(ID) { assigned_IDs.insert(ID_); }
+    Package(ElementID ID);
 
-    Package(Package &&package) : ID_(package.ID_) {}
+    Package(Package &&package) noexcept;
 
     Package &operator=(Package &&package) noexcept;
+
+    Package(const Package&) = delete;
+    Package& operator=(const Package&) = delete;
 
     ElementID get_id() const { return ID_; }
 

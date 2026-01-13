@@ -1,15 +1,13 @@
 #include "storage_types.hxx"
 
 Package PackageQueue::pop() {
-    Package package;
-
-    if (this->package_queue_type_ == PackageQueueType::LIFO) {
-        package = std::move(this->package_list_.back());
-        this->package_list_.pop_back();
+    if (package_queue_type_ == PackageQueueType::LIFO) {
+        Package p(std::move(package_list_.back()));
+        package_list_.pop_back();
+        return p;
     } else {
-        package = std::move(this->package_list_.front());
-        this->package_list_.pop_front();
+        Package p(std::move(package_list_.front()));
+        package_list_.pop_front();
+        return p;
     }
-
-    return package;
 }
