@@ -1,16 +1,28 @@
 #include "package.hxx"
-//mama mnie kocha
 
 std::set<ElementID> Package::assigned_IDs = {};
 std::set<ElementID> Package::freed_IDs = {};
 
+Package::Package(ElementID ID) : ID_(ID) {
+    assigned_IDs.insert(ID_);
+}
+
+Package::Package(Package&& package) noexcept : ID_(package.ID_) {
+    package.ID_ = 0;
+}
+
 Package& Package::operator=(Package&& package) noexcept {
     if (this == &package)
         return *this;
-    assigned_IDs.erase(this->ID_);
-    freed_IDs.insert(this->ID_);
-    this->ID_ = package.ID_;
-    assigned_IDs.insert(this->ID_);
+
+    if (ID_ != 0) {
+        assigned_IDs.erase(ID_);
+        freed_IDs.insert(ID_);
+    }
+
+    ID_ = package.ID_;
+    package.ID_ = 0;
+
     return *this;
 }
 
@@ -23,12 +35,14 @@ Package::Package() {
         }
     } else {
         ID_ = *freed_IDs.begin();
-        freed_IDs.erase(*freed_IDs.begin());
+        freed_IDs.erase(freed_IDs.begin());
     }
     assigned_IDs.insert(ID_);
 }
 
 Package::~Package() {
-    freed_IDs.insert(ID_);
-    assigned_IDs.erase(ID_);
+    if (ID_ != 0) {
+        freed_IDs.insert(ID_);
+        assigned_IDs.erase(ID_);
+    }
 }
