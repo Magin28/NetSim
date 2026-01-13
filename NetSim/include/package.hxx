@@ -15,6 +15,9 @@ public:
 
     Package &operator=(Package &&package) noexcept;
 
+    Package(const Package&) = delete;
+    Package& operator=(const Package&) = delete;
+
     ElementID get_id() const { return ID_; }
 
     ~Package();
